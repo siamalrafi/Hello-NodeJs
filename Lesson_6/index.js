@@ -1,16 +1,22 @@
-const fs = require('fs');
+var http = require('http');
 
-const ourReadStrem = fs.createReadStream(`${__dirname}/bigdata.text`);
+const server = http.createServer((req, res) => {
 
-ourReadStrem.on('data', (cunk) => {
+    if (req.url === '/') {
+        res.write(`<html><head><title>Form</title><head><body>
+        <form method="post" action="/process"><input name="massage"></input></form></body></html>`);
+        res.end();
+    }
+    else if (req.url === '/process') {
+        res.write('This is about us page');
+        res.end();
+    } else {
+        res.write('Not Found');
+    }
 
-    console.log(cunk);
-})
 
 
+}).listen(8080);
 
 
-
-
-
-
+console.log('Server listening on port8080');
