@@ -4,13 +4,17 @@ const server = http.createServer((req, res) => {
 
     if (req.url === '/') {
         res.write(`<html><head><title>Form</title><head><body>
-        <form method="post" action="/process"><input name="massage"></input></form></body></html>`);
+        <form method="POST" action="/process"><input name="massage"></input></form></body></html>`);
         res.end();
     }
-    else if (req.url === '/process') {
-        res.write('This is about us page');
+    else if (req.url === '/process' && req.method === 'POST') {
+        req.on('data', (data) => {
+            console.log(data)
+        })
+        res.write('Thank you for submitting.');
         res.end();
-    } else {
+    }
+    else {
         res.write('Not Found');
     }
 
