@@ -1,9 +1,6 @@
 /*
  * Title: Quotes Library
  * Description: Utility library for getting a list of Quotes
- * Author: Sumit Saha (Learn with Sumit)
- * Date: 11/09/19
- *
  */
 
 // Dependencies

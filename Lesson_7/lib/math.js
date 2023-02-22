@@ -1,9 +1,6 @@
 /*
  * Title: Math Library
  * Description: Utility library for math-related functions
- * Author: Sumit Saha (Learn with Sumit)
- * Date: 11/09/19
- *
  */
 
 // Math object - Module scaffolding
