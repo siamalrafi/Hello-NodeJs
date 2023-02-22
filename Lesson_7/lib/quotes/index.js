@@ -5,13 +5,21 @@ Author: Siam Al Rafi
 
 */
 
-const quote = {};
+const quotes = {};
+
+function allQuotes() {
+    // Read the text file containing the quotes
+    const fileContents = fs.readFileSync(`${__dirname}/quotes.txt`, 'utf8');
+
+    // Turn the string into an array
+    const arrayOfQuotes = fileContents.split(/\r?\n/);
+
+    return arrayOfQuotes;
+}
 
 
 
 
 
-
-
-module.export = quote;
+module.export = quotes;
 
