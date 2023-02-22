@@ -1,10 +1,8 @@
 /*
  * Title: Basic Node app example
  * Description: Simple node application that print random quotes per second interval.
- * Author: Sumit Saha ( Learn with Sumit )
- * Date: 11/09/19
- *
- */
+*/
+
 
 // Dependencies
 const mathLibrary = require('./lib/math');
