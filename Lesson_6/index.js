@@ -8,17 +8,21 @@ const server = http.createServer((req, res) => {
         res.end();
     }
     else if (req.url === '/process' && req.method === 'POST') {
+        const body = [];
         req.on('data', (data) => {
-            console.log(data)
-        })
-        res.write('Thank you for submitting.');
-        res.end();
+            body.push(data);
+        });
+
+        req.on('end', () => {
+            const parsedData = Buffer.concat(body);
+            res.write('Thank you for submitting.');
+            res.end();
+        });
+
     }
     else {
         res.write('Not Found');
-    }
-
-
+    };
 
 }).listen(8080);
 
