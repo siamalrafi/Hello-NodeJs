@@ -4,7 +4,6 @@
  * Author : Siam Al Rafi
 */
 
-
 // Dependencies
 const mathLibrary = require('./lib/math');
 const quotesLibrary = require('./lib/quotes');
