@@ -8,7 +8,6 @@
 const mathLibrary = require('./lib/math');
 const quotesLibrary = require('./lib/quotes');
 
-// App object - Module scaffolding
 const app = {};
 
 // Configuration
