@@ -20,7 +20,6 @@ app.printAQuote = function printAQuote() {
     // Get all the quotes
     const allQuotes = quotesLibrary.allQuotes();
 
-    // Get the length of the quotes
     const numberOfQuotes = allQuotes.length;
 
     // Pick a random number between 1 and the number of quotes
@@ -41,3 +40,6 @@ app.indefiniteLoop = function indefiniteLoop() {
 
 // Invoke the loop
 app.indefiniteLoop();
+
+
+
