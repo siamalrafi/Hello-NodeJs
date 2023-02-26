@@ -21,7 +21,6 @@ quotes.allQuotes = function allQuotes() {
 
     // Return the array
     return arrayOfQuotes;
-
 };
 
 // Export the library
