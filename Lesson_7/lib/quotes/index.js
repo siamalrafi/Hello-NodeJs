@@ -26,6 +26,3 @@ quotes.allQuotes = function allQuotes() {
 // Export the library
 module.exports = quotes;
 
-
-
-
