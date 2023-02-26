@@ -38,6 +38,7 @@ app.indefiniteLoop = function indefiniteLoop() {
     setInterval(app.printAQuote, app.config.timeBetweenQuotes);
 };
 
+
 // Invoke the loop
 app.indefiniteLoop();
 
