@@ -57,7 +57,7 @@ fs.unlink('mynewfile2.txt', (err) => {
 var fs = require('fs');
 
 
-fs.rename('mynewfile', 'mynewfilemynewfile', (err) => {
+fs.rename('n', 'NewRenamed.txt', (err) => {
     if (err) {
         console.log(err.message);
     } else {
