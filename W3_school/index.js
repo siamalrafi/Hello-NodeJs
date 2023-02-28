@@ -16,7 +16,7 @@ http.createServer((req, res) => {
 
 // appendFile data 
 
-var fs = require('fs');
+/* var fs = require('fs');
 
 fs.appendFile('newFile.text', ' append text ', (err) => {
     if (err) {
@@ -24,12 +24,20 @@ fs.appendFile('newFile.text', ' append text ', (err) => {
     } else {
         console.log('Successfully append');
     }
-});
+}); */
 
 
 
 
+//  create new file
 
+var fs = require('fs');
+
+fs.writeFile('text1.txt', 'Successfully', (err) => {
+    if (err) { console.log(err.message); } else {
+        console.log('Successfully')
+    }
+})
 
 
 
