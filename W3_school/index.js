@@ -29,17 +29,14 @@ fs.appendFile('newFile.text', ' append text ', (err) => {
 
 
 
-//  create new file
+//  create new file and also replace existing file content
 
-var fs = require('fs');
+/* var fs = require('fs');
 
 fs.writeFile('text1.txt', 'Successfully', (err) => {
     if (err) { console.log(err.message); } else {
         console.log('Successfully')
     }
-})
+}) */
 
-
-
-
-
+ 
