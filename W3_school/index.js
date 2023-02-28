@@ -40,7 +40,8 @@ fs.writeFile('text1.txt', 'Successfully', (err) => {
 
 
 
-
+/* 
+// Delete existing file
 var fs = require('fs');
 
 fs.unlink('mynewfile2.txt', (err) => {
@@ -48,8 +49,18 @@ fs.unlink('mynewfile2.txt', (err) => {
         console.log(err.message)
     } else {
         console.log('successfully deleted');
+    };
+}) */
+
+
+// Rename Existing file name
+var fs = require('fs');
+
+
+fs.rename('mynewfile', 'mynewfilemynewfile', (err) => {
+    if (err) {
+        console.log(err.message);
+    } else {
+        console.log('successfully renamed');
     }
-
 })
-
-
