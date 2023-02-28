@@ -27,7 +27,6 @@ fs.appendFile('newFile.text', ' append text ', (err) => {
 
 
 
-
 //  create new file and also replace existing file content
 /* var fs = require('fs');
 
@@ -36,7 +35,6 @@ fs.writeFile('text1.txt', 'Successfully', (err) => {
         console.log('Successfully')
     }
 }) */
-
 
 
 
@@ -54,7 +52,7 @@ fs.unlink('mynewfile2.txt', (err) => {
 
 
 // Rename Existing file name
-var fs = require('fs');
+/* var fs = require('fs');
 
 
 fs.rename('n', 'NewRenamed.txt', (err) => {
@@ -63,4 +61,36 @@ fs.rename('n', 'NewRenamed.txt', (err) => {
     } else {
         console.log('successfully renamed');
     }
-})
+}); */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
