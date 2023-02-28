@@ -1,1 +1,1 @@
-console.log('W3_');
+demo_readfile.js
