@@ -5,28 +5,51 @@
  * Date: 11/15/2020
  *
  */
-// dependencies
-const http = require('http');
-const { handleReqRes } = require('./helpers/routeHandlers/handleReqRes');
 
-// app object - module scaffolding
+// dependencies
+const http = require("http");
+const url = require("url");
+
 const app = {};
 
 // configuration
 app.config = {
-    port: 3000,
+    port: 3000
 };
 
-// create server
+
 app.createServer = () => {
     const server = http.createServer(app.handleReqRes);
     server.listen(app.config.port, () => {
-        console.log(`listening to port ${app.config.port}`);
-    });
+        console.log("Starting Server");
+    })
 };
 
-// handle Request Response
-app.handleReqRes = handleReqRes;
+app.handleReqRes = (req, res) => {
+    const parsedUrl = url.parse(req.url, true);
+    const path = parsedUrl.path;
+    const trimmedPath = path.replace(/^\/+|\/+$/g, '');
+    const method = req.method.toLowerCase();
+    const queryStringObject = parsedUrl.query;
+    const headersObject = req.headers;
+   
+    const requestProperties = {
+        parsedUrl,
+        path,
+        trimmedPath,
+        method,
+        queryStringObject,
+        headersObject,
+    };
 
-// start the server
+
+
+    res.end("server response.")
+};
+
+
+// server starting 
 app.createServer();
+
+
+
