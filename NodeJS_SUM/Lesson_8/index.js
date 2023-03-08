@@ -9,6 +9,8 @@
 // dependencies
 const http = require("http");
 const url = require("url");
+const { StringDecoder } = require('string_decoder');
+
 
 const app = {};
 
@@ -21,7 +23,7 @@ app.config = {
 app.createServer = () => {
     const server = http.createServer(app.handleReqRes);
     server.listen(app.config.port, () => {
-        console.log("Starting Server");
+        console.log("Server listening on port 3000");
     })
 };
 
@@ -32,8 +34,8 @@ app.handleReqRes = (req, res) => {
     const method = req.method.toLowerCase();
     const queryStringObject = parsedUrl.query;
     const headersObject = req.headers;
-   
-    const requestProperties = {
+
+    /* const requestProperties = {
         parsedUrl,
         path,
         trimmedPath,
@@ -41,11 +43,24 @@ app.handleReqRes = (req, res) => {
         queryStringObject,
         headersObject,
     };
+ */
+    const decoder = new StringDecoder('utf-8');
+    let realData = "";
 
+    req.on("data", (buffer) => {
+        realData += decoder.write(buffer);
 
+    });
 
-    res.end("server response.")
-};
+    req.on("end", () => {
+        realData += decoder.end();
+        
+        console.log(realData);
+        // response handle
+        res.end('Hello world');
+    });
+
+ };
 
 
 // server starting 
